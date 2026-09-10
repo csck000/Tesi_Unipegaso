@@ -1,0 +1,303 @@
+/* VARIABILI PER DEFINIRE COLORI (ISPIRATO A SITO MELINDA e APOFRUIT)*/
+:root {
+    --melinda-light-blue: #007bc4;
+    --melinda-yellow: #ffc107;
+    --melinda-red: #e30613;
+    --melinda-green: #3ea03b;
+    --melinda-blue: #005a9c;
+    --bg-white: #ffffff;
+    --com-verd:hwb(118 4% 49%);
+    --text-dark: #2c3e50;
+    --text-muted: #5a6c7d;
+    --font-family: 'Helvetica Neue', Arial, sans-serif;
+    --box-shadow: 0 8px 20px rgba(0, 90, 156, 0.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* REGOLE DI BASE  */
+
+body {
+    font-family: var(--font-family); /* considera il font arial, sans-serif assegnato come variabile */
+    color: var(--text-dark); /* define il colore*/
+    background-color: var(--bg-white); /* colore di sfondo */
+    line-height: 1.6; /* definisce interlinea*/
+    background-image: url(img/body_background.jpg); /*scelta immagine di sfondo*/
+    background-size: cover; /*l'immagine copre lo intero sfondo */
+    background-position: center; /*centra l'immagine */
+    background-attachment: fixed; /*blocca l'immagine sullo sfondo */
+}
+
+/* BARRA DI NAVIGAZIONE */
+
+.navbar {
+    display: flex; 
+    justify-content: space-between; /*sistema elementi interni verso i lati opposti*/
+    align-items: center;
+    background-color: var(--bg-white); 
+    padding: 15px 5%;
+    position: sticky;  /*la bara rimane bloccata senza scomparire*/
+    top: 0; z-index: 1000; /* define il punto dove si blocca la barra e la porta in primo piano*/
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /*define una leggera ombra sfocata*/
+    border-bottom: 3px solid var(--melinda-blue); /*disegna una linea spessa 3px con il colore melinda-blue*/
+}
+.logo-container .logo { 
+    font-size: 2rem; /*dimensione 2 volte quelle di base*/
+    font-weight: 800; 
+    color: var(--melinda-green);
+    text-decoration: none;
+ }
+.logo-container .logo span { 
+    color: var(--melinda-red); 
+}
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+    gap: 25px; 
+    align-items: center; 
+}
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--melinda-blue); 
+    font-weight: 600; 
+    font-size: 1rem; 
+}
+.nav-links .download-btn { 
+    background-color: var(--melinda-green); 
+    color: var(--text-dark); 
+    padding: 8px 20px; 
+    border-radius: 25px; 
+    font-weight: bold; 
+}
+/* CLASSI PER NUOVE MODIFICHE AL FORMATO */
+
+/*classe che define caratteristiche visive del pulsante btn-ritorno*/
+.btn-ritorno { 
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--melinda-green);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+/*classe che define caratteristiche visive delle liste*/
+.format_stlist{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-style: italic;
+    
+}
+
+/*classe che define caratteristiche visive dei titoli (tema) */
+.format_tematit{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/*classe che define caratteristiche visive di determinati paragrafi*/
+.text-box .paragspec{
+    font-style: italic;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--com-verd);
+}
+/*/*classe che define caratteristiche visive dei tab <p> dentro i textbox*/
+.text-box .p{
+    font-style: italic;
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}
+
+
+/* HEADER (HERO SECTION) */
+
+.hero { 
+    background: linear-gradient(135deg, var(--melinda-blue) 0%, var(--melinda-light-blue) 100%); /*imposta lo sfondo sfumato in diagonale di 135º*/
+    color: var(--bg-white); 
+    text-align: center; 
+    padding: 80px 20px; 
+    border-bottom: 5px solid var(--melinda-red); 
+}
+.hero h1 { 
+    font-size: 3rem; 
+    margin-bottom: 15px; 
+    font-weight: 800; 
+}
+.hero h2 { font-size: 1.5rem; font-weight: 400; opacity: 0.95; } /*formatta titolo h2*/
+
+/* LAYOUT DELLE SEZIONI E CONTENUTI */
+
+.container { 
+    max-width: 1200px; margin: 0 auto; /*define dimensioni del container e margini*/
+}
+.content-section {
+    padding: 60px 5%; 
+}
+.section-title { 
+    color: var(--melinda-blue); 
+    font-size: 2.2rem; 
+    margin-bottom: 20px; 
+    padding-bottom: 10px; 
+    border-bottom: 4px solid var(--melinda-light-blue); 
+    display:flex;
+
+}
+.section-subtitle { 
+    color: var(--text-muted); 
+    font-size: 1.4rem; 
+    margin-bottom: 40px; 
+    font-weight: 400; 
+    font-family: 'Times New Roman', Times, serif;
+}
+.text-box { 
+    background-color: var(--bg-white); 
+    padding: 25px; 
+    border-radius: 5px; 
+    box-shadow: var(--box-shadow); 
+    color: #444; 
+    font-size: 1.1rem; 
+    line-height: 1.8; 
+    margin-bottom: 20px; 
+}
+
+/* SISTEMA A GRIGLIA PER LE CARD */
+
+.card-grid { 
+    display: grid; /*modello CSS Grid*/
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /*disporre le colonne in modo automatico*/
+    gap: 20px; /*spazio vuoto 20px*/
+    margin-top: 20px; /*margine superiore 20px */
+}
+/*classe per formattare le card*/
+.card { 
+    background-color: var(--bg-white); 
+    border: 1px solid #e1e8ed; 
+    border-radius: 12px; padding: 30px; 
+    text-decoration: none; 
+    display: flex; 
+    flex-direction: column; 
+    border-top: 5px solid var(--melinda-light-blue); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03); 
+}
+/*effetto visivo al passare il puntatore sopra ogni card */
+.card:hover { 
+    transform: translateY(-5px); /*sposta la card 5px lungo l'asse verticale (y)*/
+    box-shadow: var(--box-shadow); 
+    border-top-color: var(--melinda-green); 
+}
+.card h4 { 
+    font-size: 1.3rem; 
+    color: var(--melinda-blue); 
+    margin-bottom: 15px; 
+}
+.card-text { 
+    color: var(--text-muted); 
+    flex-grow: 1; 
+    margin-bottom: 20px; 
+}
+.read-more { 
+    font-weight: bold; 
+    color: var(--melinda-red); 
+    font-size: 0.9rem; 
+    text-transform: uppercase; 
+}
+
+/*DEFINE ASPETTO DEL FOOTER */
+
+.site-footer { 
+    background-color: var(--melinda-blue); 
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--bg-white); 
+    text-align: center; 
+    padding: 30px 5%; 
+    margin-top: 50px; 
+    font-size: 20px; 
+}
+
+.site-footer p {
+    opacity: 0.85;
+}
+
+/* IMPOSTA IL COLORE DI FONDO PER OGNI PAGINA*/
+
+.bg-clima { 
+    background-color: #f4f9f4; 
+}
+.bg-idrico {
+     background-color: #eef7fa; 
+    }
+.bg-circolare { 
+    background-color: #fcf9f2; 
+}
+.bg-biodiversita { 
+    background-color: #f1f8ed; 
+}
+.bg-cultura { 
+    background-color: #f5f5f5; 
+}
+.bg-codetico { 
+    background-color: #fefcfb; 
+}
+.bg-corruzione { 
+    background-color: #fdfaf6; 
+}
+.bg-forza {
+    background-color: #fdfbf7; 
+}
+.bg-catena { 
+    background-color: #f4f6f9; 
+}
+.bg-comunita { 
+    background-color: #fff9f5; 
+}
+.bg-consumatori { 
+    background-color: #f8fbf4; 
+}
+.bg-concfinali{ 
+    background-color: #f1f8ed; 
+}
+.subpage-content { 
+    background-color: rgba(255, 255, 255, 0.95); 
+    padding: 40px; 
+    border-radius: 12px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    max-width: 900px;
+ }
+
+ /*REGOLA I MARGINI DELLE LISTE <UL> E <LI> */
+
+.subpage-content ul { 
+    margin-left: 20px;
+    margin-top: 15px; 
+    margin-bottom: 15px; 
+}
+
+.subpage-content li { 
+    margin-bottom: 10px; 
+}
+
+/* MEDIA QUERIES (ADATTABILITÀ SUI DISPOSITIVI MOBILI) */
+@media (max-width: 860px) {
+    .navbar {
+        flex-direction: column; /*Dispone gli elementi in verticale*/
+        gap: 15px; /*Distanzia gli elementi verticali di 15 pixel*/
+    }
+    .nav-links {
+        flex-wrap: wrap; /*permette agli elementi di disporsi su più linee*/
+        justify-content: center;
+
+    }
+    .hero h1 {
+        font-size: 2.2rem; /*Rimpicciolisce il testo per non farlo andare fuori dimensione*/
+    }
+    .alternate-bg {
+        margin: 20px 0;
+        border-radius: 0;
+    }
+}
